@@ -14,6 +14,7 @@ import telran.spring.security.jwt.dto.LoginResponse;
 @RestController
 @RequestMapping("/login")
 @RequiredArgsConstructor
+@CrossOrigin
 public class JwtController {
 	final UserDetailsService userDetailsService;
 	final PasswordEncoder passwordEncoder;

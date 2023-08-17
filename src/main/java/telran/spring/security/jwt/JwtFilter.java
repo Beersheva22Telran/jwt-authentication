@@ -2,6 +2,7 @@ package telran.spring.security.jwt;
 
 import java.io.IOException;
 
+import org.springframework.http.HttpHeaders;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.*;
@@ -26,6 +27,7 @@ final JwtUtil jwtUtil;
 	@Override
 	protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
 			throws ServletException, IOException {
+		
 		String jwt = getJwt(request);
 		log.trace("jwt from header is {}", jwt == null ? "null" : jwt);
 		if (jwt != null) {
@@ -42,6 +44,7 @@ final JwtUtil jwtUtil;
 				SecurityContextHolder.getContext().setAuthentication(authentication);
 				log.trace("security context is established");
 			} catch (Throwable e) {
+				log.error("error {}", e.getMessage());
 				
 			}
 			
