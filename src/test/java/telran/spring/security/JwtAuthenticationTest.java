@@ -41,7 +41,8 @@ class RolesConfigurationTest implements RolesConfiguration {
 	}
 	
 }
-@WebMvcTest({JwtFilter.class, JwtUtil.class, JwtController.class, JwtSecurityConfiguration.class, AccountingConfiguration.class, RolesConfigurationTest.class})
+@WebMvcTest({JwtFilter.class, JwtUtil.class, JwtController.class, JwtSecurityConfiguration.class, AccountingConfiguration.class, RolesConfigurationTest.class,
+	SecurityExceptionsHandler.class})
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 class JwtAuthenticationTest {
 	static String jwt;

@@ -23,7 +23,7 @@ import io.jsonwebtoken.security.Keys;
 public class JwtUtil {
 	@Value("${app.jwt.signature.secret}")
 	String key ;
-	@Value("${app.security.jwt.expiration.period:3600000}")
+	@Value("${app.jwt.expiration.period:3600000}")
 	long expPeriod;
 public String extractUserName(String token) {
 	
